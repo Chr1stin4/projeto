@@ -30,7 +30,7 @@ namespace projeto
             String name = txbName.Text;
             String enrollment = txbEnrollment.Text;
             MessageBox.Show(
-                "quem leu ta me devendo 10 de nota de PR2",
+                "quem leu ta me devendo 10 de nota de PR2a",
                 "sifudeu",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
