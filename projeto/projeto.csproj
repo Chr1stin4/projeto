@@ -46,16 +46,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +142,168 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\c235f11f15dc94534908846de901266f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Heart.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdaptedMind.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Old movie camera engraving vector illustration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pack Adesivos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regras do asilo da UE_ posição do Parlamento sobre a reforma da regulação Dublin _ Atualidade _ Parlamento Europeu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Regras do asilo da UE_ posição do Parlamento sobre a reforma da regulação Dublin _ Atualidade _ Parlamento Europeu1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Moda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decorative Vintage Scissors and Bobbin of Thread ~ Sweet Magnolias Farm Free Printables and  Clip Art.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alice in wonderland %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alice in wonderland %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coraline Polaroid Poster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corpse bride by Marti.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caroline Movie Poster %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLUELESS %28AS PATRICINHAS DE BEVERLY HILLS%29 POSTER.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monster high_ why do ghouls fall in love_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %288%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tim Burton Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caroline Movie Poster %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corpse bride by Marti1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animes1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %289%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %288%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monster high_ why do ghouls fall in love_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alice Were All Mad Here SVG &amp; PNG cut files - Free SVG Download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caroline Movie Poster %281%292.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alice in wonderland %281%292.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2810%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arte, Papelaria E Armarinho _ Moldes para Artesanatos _ Loja do Som - Shopping, Música, Vídeos e Letras online.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2811%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barbie _ Free Images at Clker_com - vector clip art online, royalty free &amp; public domain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2812%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_Twitchy Witchy Girl_ Sticker for Sale by ShannonBergin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2814%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luxury fashion &amp; independent designers _ SSENSE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luxury fashion &amp; independent designers _ SSENSE1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2815%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2815%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2815%292.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Designer Clothes, Shoes &amp; Bags for Women _ SSENSE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The Cheshire Cat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luxury fashion &amp; independent designers _ SSENSE %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luxury fashion &amp; independent designers _ SSENSE %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luxury fashion &amp; independent designers _ SSENSE %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luxury fashion &amp; independent designers _ SSENSE %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luxury fashion &amp; independent designers _ SSENSE %285%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buy Feminine Logo Elegant Logo Business Logo Design MS SM Online in India - Etsy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Touch Of Rose - Wedding Invitation Template %28Free%29 _ Greetings Island.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2816%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2817%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2818%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\#destaques #instagram #highlights.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %2820%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\#destaques #instagram #highlights1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
