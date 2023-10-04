@@ -30,7 +30,7 @@ namespace projeto
             String name = txbName.Text;
             String enrollment = txbEnrollment.Text;
             MessageBox.Show(
-                "quem leu ta me devendo 10 de nota de PR2a",
+                "quem leu ta me devendo 10 de nota de PR2",
                 "sifudeu",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
@@ -153,12 +153,7 @@ namespace projeto
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
 
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO Table_1 VALUES(@name,@senha)";
 
-            sqlCommand.Parameters.AddWithValue("@name", textname.Text);
-            sqlCommand.Parameters.AddWithValue("@senha", txbEnrollment.Text);
-            sqlCommand.ExecuteNonQuery();
             MessageBox.Show("Cadastro com sucesso",
                 "AVISO",
             MessageBoxButtons.OK,
