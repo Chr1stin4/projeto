@@ -68,6 +68,14 @@ namespace projeto
             PAlice.SetApartmentState(ApartmentState.STA);
             PAlice.Start();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form7 Form7 = new Form7();
+            Form7.Show();
+            this.Hide();
+        }
+
         private void novoForm3()
         {
             Application.Run(new Form5());

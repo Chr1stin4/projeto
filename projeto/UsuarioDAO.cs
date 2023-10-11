@@ -9,8 +9,9 @@ using System.Windows.Forms;
 
 namespace projeto
 {
-    public class UsuarioDAO
+     internal class UsuarioDAO
     {
+        public List<Usuario> Usuarios;
 
         public void InsertUser(Usuario usuario)
         {

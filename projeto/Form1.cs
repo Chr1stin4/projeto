@@ -221,6 +221,7 @@ namespace projeto
             sqlCommand.Parameters.AddWithValue("@id", id);
             try
             {
+                foreach (Usuario )
                 sqlCommand.ExecuteNonQuery();
             }
             catch (Exception err)
