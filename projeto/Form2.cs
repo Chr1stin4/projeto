@@ -15,7 +15,8 @@ namespace projeto
 {
     public partial class Form2 : Form
     {
-        Thread abc, PCoraline, PNoiva, PAlice, Pbarbie, Psanrio, Pmonsterhight;
+        //Pbarbie, Psanrio, Pmonsterhight
+        Thread abc, PCoraline, PNoiva, PAlice;
 
         public Form2()
         {

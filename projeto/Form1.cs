@@ -150,20 +150,29 @@ namespace projeto
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
-
-
-            MessageBox.Show("Cadastro com sucesso",
+            try
+            {
+                //Criar objeto da Classe Usuario
+                Usuario usuario = new Usuario(
+                    textname.Text,
+                    txbEnrollment.Text);
+                //chamado o metodo da exclusão
+                UsuarioDAO nomeDoObj = new UsuarioDAO();
+                nomeDoObj.InsertUser(usuario);
+                MessageBox.Show("Cadastro com sucesso",
                 "AVISO",
             MessageBoxButtons.OK,
             MessageBoxIcon.Information);
 
-            textname.Clear();
-            txbEnrollment.Clear();
-            UpdateListView();
+                textname.Clear();
+                txbEnrollment.Clear();
+                UpdateListView();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
          UpdateListView();
