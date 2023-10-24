@@ -11,9 +11,44 @@ namespace projeto
 {
      internal class UsuarioDAO
     {
-        public List<Usuario> Usuarios;
+        public List<Usuario> SelectUsuario()
+        {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
 
-        public void InsertUser(Usuario usuario)
+            sqlCom.Connection = conn.ReturnConnection();
+            sqlCom.CommandText = "SELECT * FROM Student";
+
+            List<Usuario> users = new List<Usuario>();
+            try
+            {
+                SqlDataReader dr = sqlCom.ExecuteReader();
+
+                //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
+                while (dr.Read())
+                {
+                    Usuario objeto = new Usuario(
+                    (int)dr["Id"],
+                    (string)dr["Name"],
+                    (string)dr["senha"]
+                    );
+
+                    users.Add(objeto);
+                }
+                dr.Close();
+                return users;//retornar a lista
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+            return null;
+        }
+    public void InsertUsuario(Usuario usuario)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();

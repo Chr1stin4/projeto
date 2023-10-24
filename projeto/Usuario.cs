@@ -14,12 +14,19 @@ namespace projeto
         private string _Nome;
         private string _senha;
 
-        public Usuario(int id, 
+        public Usuario( string nome,
+            string senha)
+        {
+            Nome = nome;
+            Senha = senha;
+        }
+        public Usuario(int id,
             string nome,
             string senha)
         {
             Nome = nome;
             Senha = senha;
+            Id = id;
         }
         public int Id
         {

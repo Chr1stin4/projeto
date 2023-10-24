@@ -60,27 +60,15 @@ namespace projeto
         private void UpdateListView()
         {
             listView2.Items.Clear();
-
-            Connection conn = new Connection();
-            SqlCommand sqlCom = new SqlCommand();
-
-            sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM Table_1";
-
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            List<Usuario> usuarios = new List<Usuario>();
             try
             {
-                SqlDataReader dr = sqlCom.ExecuteReader();
-
-                //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
-                while (dr.Read())
+                foreach (Usuario usuario in usuarios)
                 {
-                    int id = (int)dr["id"];
-                    string name = (string)dr["Nome"];
-                    string Senha = (string)dr["Senha"];
-
-                    ListViewItem lv = new ListViewItem(id.ToString());
-                    lv.SubItems.Add(name);
-                    lv.SubItems.Add(Senha);
+                    ListViewItem lv = new ListViewItem(usuario.Id.ToString());
+                    lv.SubItems.Add(usuario.Nome);
+                    lv.SubItems.Add(usuario.Senha);
                     listView2.Items.Add(lv);
                 }
             }
@@ -153,7 +141,7 @@ namespace projeto
                     txbEnrollment.Text);
                 //chamado o metodo da exclusão
                 UsuarioDAO nomeDoObj = new UsuarioDAO();
-                nomeDoObj.InsertUser(usuario);
+                nomeDoObj.InsertUsuario(usuario);
                 MessageBox.Show("Cadastro com sucesso",
                 "AVISO",
             MessageBoxButtons.OK,
@@ -216,7 +204,6 @@ namespace projeto
             sqlCommand.Parameters.AddWithValue("@id", id);
             try
             {
-                foreach (Usuario )
                 sqlCommand.ExecuteNonQuery();
             }
             catch (Exception err)
