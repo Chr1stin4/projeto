@@ -24,11 +24,6 @@ namespace projeto
             sqlCommand.Parameters.AddWithValue("@name", usuario.Nome);
             sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
             sqlCommand.ExecuteNonQuery();
-            MessageBox.Show("Cadastro com sucesso",
-                "AVISO",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information);
-
         }
         public void DeleteUsuario(int id)
         {

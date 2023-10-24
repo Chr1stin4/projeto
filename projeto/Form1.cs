@@ -83,15 +83,10 @@ namespace projeto
                     lv.SubItems.Add(Senha);
                     listView2.Items.Add(lv);
                 }
-                dr.Close();
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
-            }
-            finally
-            {
-                conn.CloseConnection();
             }
         }
         private void button2_Click_1(object sender, EventArgs e)
