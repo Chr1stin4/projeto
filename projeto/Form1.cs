@@ -61,7 +61,7 @@ namespace projeto
         {
             listView2.Items.Clear();
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-            List<Usuario> usuarios = new List<Usuario>();
+            List<Usuario> usuarios = usuarioDAO.SelectUsuario();
             try
             {
                 foreach (Usuario usuario in usuarios)

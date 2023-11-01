@@ -17,7 +17,7 @@ namespace projeto
             SqlCommand sqlCom = new SqlCommand();
 
             sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM Student";
+            sqlCom.CommandText = "SELECT * FROM Table_1";
 
             List<Usuario> users = new List<Usuario>();
             try
@@ -29,7 +29,7 @@ namespace projeto
                 {
                     Usuario objeto = new Usuario(
                     (int)dr["Id"],
-                    (string)dr["Name"],
+                    (string)dr["Nome"],
                     (string)dr["senha"]
                     );
 
@@ -56,7 +56,7 @@ namespace projeto
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"INSERT INTO Table_1 VALUES(@name,@senha)";
 
-            sqlCommand.Parameters.AddWithValue("@name", usuario.Nome);
+            sqlCommand.Parameters.AddWithValue("@nome", usuario.Nome);
             sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
             sqlCommand.ExecuteNonQuery();
         }
