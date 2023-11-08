@@ -64,9 +64,6 @@ namespace projeto
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
-
-
-
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"DELETE FROM Table_1 WHERE id = @id";
             sqlCommand.Parameters.AddWithValue("@id", id);

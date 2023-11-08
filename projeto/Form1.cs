@@ -186,22 +186,14 @@ namespace projeto
              MessageBoxButtons.OK,
              MessageBoxIcon.Information
              );
-
             textname.Clear();
             txbEnrollment.Clear();
-
             UpdateListView();
         }
 
         private void delete_Click(object sender, EventArgs e)
         {
             //Código para excluir
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
-
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"DELETE FROM Table_1 WHERE id = @id";
-            sqlCommand.Parameters.AddWithValue("@id", id);
             try
             {
                 sqlCommand.ExecuteNonQuery();
