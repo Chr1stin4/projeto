@@ -144,8 +144,8 @@ namespace projeto
                 nomeDoObj.InsertUsuario(usuario);
                 MessageBox.Show("Cadastro com sucesso",
                 "AVISO",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information);
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
 
                 textname.Clear();
                 txbEnrollment.Clear();
@@ -155,6 +155,7 @@ namespace projeto
             {
                 MessageBox.Show(error.Message);
             }
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -165,30 +166,29 @@ namespace projeto
         {
             string USER_LR = textname.Text, SENHA = txbEnrollment.Text;
 
-
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
-
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"UPDATE table_1 SET
-            nome = @nome,
-            senha = @senha
-            WHERE id = @id";
-
-            sqlCommand.Parameters.AddWithValue("@nome", textname.Text);
-            sqlCommand.Parameters.AddWithValue("@senha", txbEnrollment.Text);
-            sqlCommand.Parameters.AddWithValue("@id", id);
-            sqlCommand.ExecuteNonQuery();
-
-            MessageBox.Show(
-             "Login alterado com sucesso !",
-             "AVISO",
-             MessageBoxButtons.OK,
-             MessageBoxIcon.Information
-             );
-            textname.Clear();
-            txbEnrollment.Clear();
-            UpdateListView();
+            try
+            {
+                Usuario usuario = new Usuario(
+                    id,
+                    textname.Text,
+                    txbEnrollment.Text);
+                //chamando o metodo de exclusão
+                UsuarioDAO nomeDoObj = new UsuarioDAO();
+                nomeDoObj.UpdateUsuario(usuario);
+                MessageBox.Show(
+                 "Login alterado com sucesso !",
+                 "AVISO",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Information
+                 );
+                textname.Clear();
+                txbEnrollment.Clear();
+                UpdateListView();
+            }
+            catch(Exception error) 
+            { 
+                MessageBox.Show(error.Message);
+            }
         }
 
         private void delete_Click(object sender, EventArgs e)
@@ -196,16 +196,17 @@ namespace projeto
             //Código para excluir
             try
             {
-                sqlCommand.ExecuteNonQuery();
+                Usuario usuario = new Usuario(
+                        textname.Text,
+                        txbEnrollment.Text);
+                //chamando o metodo de exclusão
+                UsuarioDAO nomeDoObj = new UsuarioDAO();
+                nomeDoObj.DeleteUsuario(id);
             }
-            catch (Exception err)
+            catch (Exception error)
             {
-                throw new Exception("Erro: Problemas ao excluir usuário no banco.\n" + err.Message);
-            }
-            finally
-            {
-                connection.CloseConnection();
-            }
+                MessageBox.Show(error.Message);
+            }    
             textname.Clear();
             txbEnrollment.Clear();
 
@@ -218,6 +219,11 @@ namespace projeto
             id = int.Parse(listView2.Items[index].SubItems[0].Text);
             textname.Text = listView2.Items[index].SubItems[1].Text;
             txbEnrollment.Text = listView2.Items[index].SubItems[2].Text;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }           

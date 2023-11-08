@@ -48,7 +48,7 @@ namespace projeto
             }
             return null;
         }
-    public void InsertUsuario(Usuario usuario)
+     public void InsertUsuario(Usuario usuario)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
@@ -56,7 +56,7 @@ namespace projeto
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"INSERT INTO Table_1 VALUES(@name,@senha)";
 
-            sqlCommand.Parameters.AddWithValue("@nome", usuario.Nome);
+            sqlCommand.Parameters.AddWithValue("@name", usuario.Nome);
             sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
             sqlCommand.ExecuteNonQuery();
         }
@@ -79,6 +79,23 @@ namespace projeto
             {
                 connection.CloseConnection();
             }
+        }
+        public void UpdateUsuario(Usuario usuario)
+        {
+            Connection connection = new Connection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"UPDATE table_1 SET
+            nome = @nome,
+            senha = @senha
+            WHERE id = @id";
+
+            sqlCommand.Parameters.AddWithValue("@nome", usuario.Nome);
+            sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
+            sqlCommand.Parameters.AddWithValue("@id", usuario.Id);
+            sqlCommand.ExecuteNonQuery();
+
         }
     }
 }
