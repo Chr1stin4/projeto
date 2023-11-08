@@ -11,6 +11,40 @@ namespace projeto
 {
      internal class UsuarioDAO
     {
+        public bool Loginusuario(String usuario,string senha) 
+        {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
+
+            sqlCom.Connection = conn.ReturnConnection();
+            sqlCom.CommandText = "SELECT * FROM Table_1 WHERE" +
+                "Nome = @nome AND Senha= @senha";
+            sqlCom.Parameters.AddWithValue("@nome",usuario);
+            sqlCom.Parameters.AddWithValue("@senha",senha);
+
+
+            try
+            {
+                SqlDataReader dr = sqlCom.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Close();
+                    return true;
+
+                }
+
+                dr.Close();
+                return false;
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro:Problemas ao excluir o usuário no banco.\n" + err.Message);
+            }
+             finally
+            {
+                conn.CloseConnection();
+            }
+        }
         public List<Usuario> SelectUsuario()
         {
             Connection conn = new Connection();
