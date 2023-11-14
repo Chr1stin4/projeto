@@ -30,7 +30,6 @@ namespace projeto
                 {
                     dr.Close();
                     return true;
-
                 }
 
                 dr.Close();
