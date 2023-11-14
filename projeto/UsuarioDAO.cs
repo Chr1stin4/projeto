@@ -18,9 +18,9 @@ namespace projeto
 
             sqlCom.Connection = conn.ReturnConnection();
             sqlCom.CommandText = "SELECT * FROM Table_1 WHERE" +
-                "Nome = @nome AND Senha= @senha";
-            sqlCom.Parameters.AddWithValue("@nome",usuario);
-            sqlCom.Parameters.AddWithValue("@senha",senha);
+                " Nome = @Nome AND Senha = @Senha";
+            sqlCom.Parameters.AddWithValue("@Nome",usuario);
+            sqlCom.Parameters.AddWithValue("@Senha",senha);
 
 
             try
@@ -61,9 +61,9 @@ namespace projeto
                 while (dr.Read())
                 {
                     Usuario objeto = new Usuario(
-                    (int)dr["Id"],
+                    (int)dr["id"],
                     (string)dr["Nome"],
-                    (string)dr["senha"]
+                    (string)dr["Senha"]
                     );
 
                     users.Add(objeto);
@@ -87,9 +87,9 @@ namespace projeto
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO Table_1 VALUES(@name,@senha)";
+            sqlCommand.CommandText = @"INSERT INTO Table_1 VALUES(@nome,@senha)";
 
-            sqlCommand.Parameters.AddWithValue("@name", usuario.Nome);
+            sqlCommand.Parameters.AddWithValue("@nome", usuario.Nome);
             sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
             sqlCommand.ExecuteNonQuery();
         }
@@ -120,8 +120,8 @@ namespace projeto
 
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"UPDATE table_1 SET
-            nome = @nome,
-            senha = @senha
+            Nome = @nome,
+            Senha = @senha
             WHERE id = @id";
 
             sqlCommand.Parameters.AddWithValue("@nome", usuario.Nome);

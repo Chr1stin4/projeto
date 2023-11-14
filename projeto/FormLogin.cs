@@ -26,7 +26,7 @@ namespace projeto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String usuario = textBox1.Text;
+            String usuario = textBox2.Text;
             String senha = textBox1.Text;
             //Criar objeto da classe UsuarioDAO
             UsuarioDAO user = new UsuarioDAO(); 
@@ -38,7 +38,7 @@ namespace projeto
             }
             else 
             {
-                MessageBox.Show("Verifique os dados inserdios!",
+                MessageBox.Show("Verifique os dados inseridos!",
                     " 70 70 se n der 70 d nvo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -47,5 +47,9 @@ namespace projeto
             }
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
