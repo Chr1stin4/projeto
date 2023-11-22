@@ -35,6 +35,7 @@ namespace projeto
             if (user.Loginusuario(usuario,senha)) {
                 Form1 tela = new Form1();
                 tela.ShowDialog();
+                this.Close();
             }
             else 
             {
