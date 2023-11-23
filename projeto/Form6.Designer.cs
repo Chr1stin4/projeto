@@ -89,7 +89,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button1);
             this.Name = "Form6";
-            this.Text = "Form6";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

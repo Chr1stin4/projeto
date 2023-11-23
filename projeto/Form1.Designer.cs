@@ -33,8 +33,6 @@
             this.txbName = new System.Windows.Forms.Label();
             this.txbEnrollment = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textname = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,8 +42,8 @@
             this.columnSenha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button4 = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,35 +92,14 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::projeto.Properties.Resources.Old_movie_camera_engraving_vector_illustration;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(706, 391);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(187, 131);
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::projeto.Properties.Resources.Heart;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1098, 370);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(187, 152);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.Image = global::projeto.Properties.Resources.c235f11f15dc94534908846de901266f;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(8, 770);
+            this.button1.Location = new System.Drawing.Point(-2, 1016);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 83);
+            this.button1.Size = new System.Drawing.Size(10, 13);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -194,19 +171,28 @@
             this.delete.UseVisualStyleBackColor = true;
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::projeto.Properties.Resources.Buy_Feminine_Logo_Elegant_Logo_Business_Logo_Design_MS_SM_Online_in_India___Etsy;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(918, 403);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(159, 141);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::projeto.Properties.Resources.Regras_do_asilo_da_UE__posição_do_Parlamento_sobre_a_reforma_da_regulação_Dublin___Atualidade___Parlamento_Europeu;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textname);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txbEnrollment);
             this.Controls.Add(this.txbName);
@@ -215,8 +201,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,8 +215,6 @@
         private System.Windows.Forms.Label txbName;
         private System.Windows.Forms.TextBox txbEnrollment;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textname;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ListView listView2;
@@ -240,6 +223,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.ColumnHeader columnSenha;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
