@@ -14,6 +14,8 @@ namespace projeto
     public partial class Form3 : Form
     {
         Thread abc, C;
+        private bool radioButtonLigado1 = false;
+        private bool radioButtonLigado2 = false;
         public Form3()
         {
             InitializeComponent();
@@ -49,6 +51,36 @@ namespace projeto
             C = new Thread(novoForm1);
             C.SetApartmentState(ApartmentState.STA);
             C.Start();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                if (radioButtonLigado1)
+                {
+                    radioButtonLigado1 = false;
+                }
+                else
+                {
+                    radioButtonLigado1 = true;
+                }
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                if (radioButtonLigado2)
+                {
+                    radioButtonLigado2 = false;
+                }
+                else
+                {
+                    radioButtonLigado2 = true;
+                }
+            }
         }
 
         private void novoForm1()

@@ -1,4 +1,5 @@
-﻿using InvestimentosMais;
+﻿using CefSharp.DevTools.LayerTree;
+using InvestimentosMais;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -222,6 +223,13 @@ namespace projeto
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
