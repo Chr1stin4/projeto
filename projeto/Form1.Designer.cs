@@ -60,16 +60,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(884, 597);
+            this.label2.Location = new System.Drawing.Point(819, 473);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "senha:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txbName
             // 
             this.txbName.AutoSize = true;
-            this.txbName.Location = new System.Drawing.Point(884, 553);
+            this.txbName.Location = new System.Drawing.Point(819, 436);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(39, 13);
             this.txbName.TabIndex = 6;
@@ -78,7 +79,7 @@
             // 
             // txbEnrollment
             // 
-            this.txbEnrollment.Location = new System.Drawing.Point(929, 590);
+            this.txbEnrollment.Location = new System.Drawing.Point(864, 470);
             this.txbEnrollment.Name = "txbEnrollment";
             this.txbEnrollment.Size = new System.Drawing.Size(148, 20);
             this.txbEnrollment.TabIndex = 7;
@@ -86,7 +87,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(973, 655);
+            this.button3.Location = new System.Drawing.Point(902, 523);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(59, 19);
             this.button3.TabIndex = 9;
@@ -108,7 +109,7 @@
             // 
             // textname
             // 
-            this.textname.Location = new System.Drawing.Point(929, 550);
+            this.textname.Location = new System.Drawing.Point(864, 433);
             this.textname.Name = "textname";
             this.textname.Size = new System.Drawing.Size(148, 20);
             this.textname.TabIndex = 14;
@@ -116,7 +117,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(973, 628);
+            this.button2.Location = new System.Drawing.Point(902, 496);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(59, 21);
             this.button2.TabIndex = 15;
@@ -155,7 +156,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(973, 680);
+            this.button4.Location = new System.Drawing.Point(902, 548);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(59, 20);
             this.button4.TabIndex = 18;
@@ -165,7 +166,7 @@
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(973, 706);
+            this.delete.Location = new System.Drawing.Point(902, 574);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(59, 23);
             this.delete.TabIndex = 19;
@@ -177,7 +178,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::projeto.Properties.Resources.Buy_Feminine_Logo_Elegant_Logo_Business_Logo_Design_MS_SM_Online_in_India___Etsy;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(918, 403);
+            this.pictureBox1.Location = new System.Drawing.Point(853, 282);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(159, 141);
             this.pictureBox1.TabIndex = 20;
@@ -192,7 +193,7 @@
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(99, 403);
+            this.maskedTextBox2.Location = new System.Drawing.Point(21, 800);
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBox2.TabIndex = 27;
