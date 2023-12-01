@@ -33,7 +33,7 @@ namespace projeto
             //chamar o metodo que verifica o login
             //o usuário e senha existem na tabela
             if (user.Loginusuario(usuario,senha)) {
-                Form1 tela = new Form1();
+                Form8 tela = new Form8();
                 tela.ShowDialog();
                 this.Close();
             }

@@ -8,19 +8,19 @@ using System.Windows.Forms;
 
 namespace projeto
 {
-    public class Usuario
+    public class Usuario1
     {
         private int _id;
         private string _Nome;
         private string _senha;
 
-        public Usuario( string nome,
+        public Usuario1( string nome,
             string senha)
         {
             Nome = nome;
             Senha = senha;
         }
-        public Usuario(int id,
+        public Usuario1(int id,
             string nome,
             string senha)
         {

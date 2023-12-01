@@ -265,6 +265,16 @@ namespace projeto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Classic_White {
+            get {
+                object obj = ResourceManager.GetObject("Classic White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CLUELESS__AS_PATRICINHAS_DE_BEVERLY_HILLS__POSTER {
             get {
                 object obj = ResourceManager.GetObject("CLUELESS (AS PATRICINHAS DE BEVERLY HILLS) POSTER", resourceCulture);
