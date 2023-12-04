@@ -12,36 +12,7 @@ namespace projeto
 {
      internal class UsuarioDAO
     {
-        public bool Loginusuario(String usuario,string senha) 
-        {
-            Connection conn = new Connection();
-            SqlCommand sqlCom = new SqlCommand();
-
-            sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM Table_1 WHERE" +
-                " Nome = @Nome";
-            sqlCom.Parameters.AddWithValue("@Nome",usuario);
-            try
-            {
-                SqlDataReader dr = sqlCom.ExecuteReader();
-
-                    // Verificar se a senha fornecida corresponde à senha armazenada no banco de dados
-                    if (VerificarSenha(senha, hashedSenha))
-                    {
-                        return true;
-                    }
-                dr.Close();
-                return false;
-            }
-            catch (Exception err)
-            {
-                throw new Exception("Erro:Problemas ao excluir o usuário no banco.\n" + err.Message);
-            }
-            finally
-            {
-                conn.CloseConnection();
-            }
-        }
+        
         public List<Usuario> SelectUsuario()
         {
             Connection conn = new Connection();
@@ -77,8 +48,48 @@ namespace projeto
             {
                 conn.CloseConnection();
             }
+            return null;
         }
-     public void InsertUsuario(Usuario usuario)
+        //read
+        public bool Loginusuario(String usuario, string senha)
+        {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
+
+            sqlCom.Connection = conn.ReturnConnection();
+            sqlCom.CommandText = "SELECT * FROM Table_1 WHERE" +
+                " Nome = @Nome";
+            sqlCom.Parameters.AddWithValue("@Nome", usuario);
+            try
+            {
+                SqlDataReader dr = sqlCom.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    string hashedSenha = (string)dr["Senha"];
+                    dr.Close();
+
+                    // Verificar se a senha fornecida corresponde à senha armazenada no banco de dados
+                    if (VerificarSenha(senha, hashedSenha))
+                    {
+                        return true;
+                    }
+                    return true;
+                }
+                dr.Close();
+                return false;
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro:Problemas ao excluir o usuário no banco.\n" + err.Message);
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
+        //create
+        public void InsertUsuario(Usuario usuario)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
@@ -92,6 +103,7 @@ namespace projeto
             sqlCommand.Parameters.AddWithValue("@senha", hashedSenha);
             sqlCommand.ExecuteNonQuery();
         }
+        //delete
         public void DeleteUsuario(int id)
         {
             Connection connection = new Connection();
@@ -112,6 +124,7 @@ namespace projeto
                 connection.CloseConnection();
             }
         }
+        //edit
         public void UpdateUsuario(Usuario usuario)
         {
             Connection connection = new Connection();
@@ -128,6 +141,11 @@ namespace projeto
             sqlCommand.Parameters.AddWithValue("@id", usuario.Id);
             sqlCommand.ExecuteNonQuery();
         }
+
+
+
+
+
         private bool VerificarSenha(string senha, string hashedSenha)
         { 
             string hashedInputSenha = HashSenha(senha);
