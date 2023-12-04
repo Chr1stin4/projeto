@@ -30,5 +30,15 @@ namespace projeto
             tela.ShowDialog();
             this.Close();
         }
+
+        private void Form9_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

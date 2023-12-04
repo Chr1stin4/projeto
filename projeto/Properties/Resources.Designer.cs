@@ -63,6 +63,16 @@ namespace projeto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _184869 {
+            get {
+                object obj = ResourceManager.GetObject("184869", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6efc6e_e547fe9fdfec4353a51e06594cbf4019_mv2 {
             get {
                 object obj = ResourceManager.GetObject("6efc6e_e547fe9fdfec4353a51e06594cbf4019~mv2", resourceCulture);
@@ -278,6 +288,26 @@ namespace projeto.Properties {
         internal static System.Drawing.Bitmap Classic_White1 {
             get {
                 object obj = ResourceManager.GetObject("Classic White1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Classic_White2 {
+            get {
+                object obj = ResourceManager.GetObject("Classic White2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Classic_White3 {
+            get {
+                object obj = ResourceManager.GetObject("Classic White3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -566,6 +596,16 @@ namespace projeto.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap marquito {
+            get {
+                object obj = ResourceManager.GetObject("marquito", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Moda {
             get {
                 object obj = ResourceManager.GetObject("Moda", resourceCulture);
@@ -589,6 +629,16 @@ namespace projeto.Properties {
         internal static System.Drawing.Bitmap monster_high__why_do_ghouls_fall_in_love_1 {
             get {
                 object obj = ResourceManager.GetObject("monster high_ why do ghouls fall in love_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Obrigada_pela_compra {
+            get {
+                object obj = ResourceManager.GetObject("Obrigada pela compra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

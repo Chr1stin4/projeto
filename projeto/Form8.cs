@@ -18,7 +18,7 @@ namespace projeto
         {
             InitializeComponent();
             UpdateListView();
-            textBox1.TextChanged += textBox1_TextChanged;
+            textBox2.TextChanged += textBox2_TextChanged;
         }
         private void UpdateListView()
         {
@@ -44,10 +44,13 @@ namespace projeto
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox1.Text))
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox2.Text))
             {
                 // Remove qualquer formatação existente
-                string cpfSemFormato = textBox1.Text.Replace(".", "").Replace("-", "");
+                string cpfSemFormato = textBox2.Text.Replace(".", "").Replace("-", "");
 
                 // Verifica se o CPF tem 11 dígitos
                 if (cpfSemFormato.Length == 11)
@@ -56,10 +59,10 @@ namespace projeto
                     string cpfFormatado = Convert.ToUInt64(cpfSemFormato).ToString(@"000\.000\.000\-00");
 
                     // Atualiza o texto do TextBox
-                    textBox1.Text = cpfFormatado;
+                    textBox2.Text = cpfFormatado;
 
                     // Move o cursor para o final do texto
-                    textBox1.SelectionStart = textBox1.Text.Length;
+                    textBox2.SelectionStart = textBox2.Text.Length;
                 }
             }
         }
@@ -166,15 +169,15 @@ namespace projeto
 
         private void button4_Click(object sender, EventArgs e)
         {
-            String usuario = textBox2.Text;
-            String senha = textBox1.Text;
+            String cpf = textBox1.Text;
+            String email = textBox2.Text;
             //Criar objeto da classe UsuarioDAO
-            UsuarioDAO user = new UsuarioDAO();
+            UsuarioDAO2 user2 = new UsuarioDAO2();
             //chamar o metodo que verifica o login
             //o usuário e senha existem na tabela
-            if (user.Loginusuario(usuario, senha))
+            if (user2.Loginusuario2(cpf, email))
             {
-                Form6 tela = new Form6();
+                Form9 tela = new Form9();
                 tela.ShowDialog();
                 this.Close();
             }
@@ -194,8 +197,8 @@ namespace projeto
             int index;
             index = listView2.FocusedItem.Index;
             id = int.Parse(listView2.Items[index].SubItems[0].Text);
-            textBox1.Text = listView2.Items[index].SubItems[1].Text;
-            textBox2.Text = listView2.Items[index].SubItems[2].Text;
+            textBox2.Text = listView2.Items[index].SubItems[1].Text;
+            textBox1.Text = listView2.Items[index].SubItems[2].Text;
         }
 
         private void button5_Click(object sender, EventArgs e)
