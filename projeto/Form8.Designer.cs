@@ -39,6 +39,11 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.column3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,13 +87,13 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "apagar";
+            this.button1.Text = "deletar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1078, 558);
+            this.button2.Location = new System.Drawing.Point(953, 594);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 24);
             this.button2.TabIndex = 5;
@@ -135,12 +140,51 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(953, 594);
+            this.button4.Location = new System.Drawing.Point(1078, 559);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(58, 23);
             this.button4.TabIndex = 30;
             this.button4.Text = "entrar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.column3});
+            this.listView2.HideSelection = false;
+            this.listView2.LabelEdit = true;
+            this.listView2.Location = new System.Drawing.Point(247, 230);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(220, 243);
+            this.listView2.TabIndex = 31;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listView2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView2_MouseDoubleClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "CPF";
+            // 
+            // column3
+            // 
+            this.column3.Text = "Email";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(23, 13);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(90, 38);
+            this.button5.TabIndex = 32;
+            this.button5.Text = "voltar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form8
             // 
@@ -149,6 +193,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::projeto.Properties.Resources.Classic_White;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.listView2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.monthCalendar1);
@@ -182,5 +228,10 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader column3;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -111,7 +111,7 @@ namespace projeto
 
         private void novoForm1()
         {
-             Application.Run(new Form6());
+             Application.Run(new Form9());
         }
     }
 }

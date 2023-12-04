@@ -13,24 +13,19 @@ namespace projeto
         private int _id;
         private string _CPF;
         private string _email;
-        private DateTime _datadenascimento;
 
         public Usuario2( string CPF,
-            string email,
-            DateTime datadenascimento)
+            string email)
         {
             Cpf = CPF;
             Email = email;
-            Datadenascimento = datadenascimento;
         }
         public Usuario2(int id,
             string CPF,
-            string email,
-           DateTime datadenascimento)
+            string email)
         {
            Cpf = CPF;
            Email = email;
-           Datadenascimento = datadenascimento; 
             Id = id;
         }
         public int Id
@@ -54,11 +49,6 @@ namespace projeto
         {
             set { _email = value; }
             get { return _email; }
-        }
-        public DateTime Datadenascimento
-        {
-            set { _datadenascimento = value; }
-            get { return _datadenascimento; }
         }
     }
 }

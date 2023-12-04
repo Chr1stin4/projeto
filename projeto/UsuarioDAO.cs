@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,17 +19,24 @@ namespace projeto
 
             sqlCom.Connection = conn.ReturnConnection();
             sqlCom.CommandText = "SELECT * FROM Table_1 WHERE" +
-                " Nome = @Nome AND Senha = @Senha";
+                " Nome = @Nome";
             sqlCom.Parameters.AddWithValue("@Nome",usuario);
             try
             {
                 SqlDataReader dr = sqlCom.ExecuteReader();
                 if (dr.HasRows)
                 {
+                    dr.Read();
+                    string hashedSenha = (string)dr["Senha"];
                     dr.Close();
+
+                    // Verificar se a senha fornecida corresponde à senha armazenada no banco de dados
+                    if (VerificarSenha(senha, hashedSenha))
+                    {
+                        return true;
+                    }
                     return true;
                 }
-
                 dr.Close();
                 return false;
             }
@@ -36,7 +44,7 @@ namespace projeto
             {
                 throw new Exception("Erro:Problemas ao excluir o usuário no banco.\n" + err.Message);
             }
-             finally
+            finally
             {
                 conn.CloseConnection();
             }
@@ -87,7 +95,9 @@ namespace projeto
             sqlCommand.CommandText = @"INSERT INTO Table_1 VALUES(@nome,@senha)";
 
             sqlCommand.Parameters.AddWithValue("@nome", usuario.Nome);
-            sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
+            // Hash da senha antes de armazenar no banco de dados
+            string hashedSenha = HashSenha(usuario.Senha);
+            sqlCommand.Parameters.AddWithValue("@senha", hashedSenha);
             sqlCommand.ExecuteNonQuery();
         }
         public void DeleteUsuario(int id)
@@ -125,7 +135,20 @@ namespace projeto
             sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
             sqlCommand.Parameters.AddWithValue("@id", usuario.Id);
             sqlCommand.ExecuteNonQuery();
-
+        }
+        private bool VerificarSenha(string senha, string hashedSenha)
+        { 
+            string hashedInputSenha = HashSenha(senha);
+            return string.Equals(hashedSenha, hashedInputSenha);
+        }
+        // Método para gerar o hash SHA-256 de uma senha
+        private string HashSenha(string senha)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senha));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ namespace projeto
 
         private void novoForm()
         {
-            Application.Run(new Form1());
+            Application.Run(new Form0());
         }
         private void button1_Click(object sender, EventArgs e)
         {

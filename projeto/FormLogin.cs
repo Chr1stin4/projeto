@@ -33,7 +33,7 @@ namespace projeto
             //chamar o metodo que verifica o login
             //o usuário e senha existem na tabela
             if (user.Loginusuario(usuario,senha)) {
-                Form8 tela = new Form8();
+                Form2 tela = new Form2();
                 tela.ShowDialog();
                 this.Close();
             }
@@ -71,6 +71,19 @@ namespace projeto
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Form0 tela1 = new Form0();
+            tela1.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
         }
     }
 }

@@ -9,19 +9,19 @@ using System.Windows.Forms;
 
 namespace projeto
 {
-     internal class UsuarioDAO1
+     internal class UsuarioDAO2
     {
-        public bool Loginusuario1(String Cpf,string Email,DateTime Datadenascimento) 
+        public bool Loginusuario2(string Cpf,string Email) 
         {
             Connection conn = new Connection();
             SqlCommand sqlCom = new SqlCommand();
 
             sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM Table_1 WHERE" +
-                " Cpf = @Cpf AND Email = @Email ";
-            sqlCom.Parameters.AddWithValue("@Nome",usuario);
-            sqlCom.Parameters.AddWithValue("@Senha",senha);
-
+            sqlCom.CommandText = "SELECT * FROM Table_2 WHERE" +
+                " Cpf = @Cpf AND Email = @Email";
+            sqlCom.Parameters.AddWithValue("@cpf", Cpf);
+            sqlCom.Parameters.AddWithValue("@email", Email);
+      
 
             try
             {
@@ -44,15 +44,15 @@ namespace projeto
                 conn.CloseConnection();
             }
         }
-        public List<Usuario> SelectUsuario()
+        public List<Usuario2> SelectUsuario2()
         {
             Connection conn = new Connection();
             SqlCommand sqlCom = new SqlCommand();
 
             sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM Table_1";
+            sqlCom.CommandText = "SELECT * FROM Table_2";
 
-            List<Usuario> users = new List<Usuario>();
+            List<Usuario2> users2 = new List<Usuario2>();
             try
             {
                 SqlDataReader dr = sqlCom.ExecuteReader();
@@ -60,16 +60,16 @@ namespace projeto
                 //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
                 while (dr.Read())
                 {
-                    Usuario objeto = new Usuario(
+                    Usuario2 objeto = new Usuario2(
                     (int)dr["id"],
-                    (string)dr["Nome"],
-                    (string)dr["Senha"]
+                    (string)dr["Cpf"],
+                    (string)dr["Email"]
                     );
 
-                    users.Add(objeto);
+                    users2.Add(objeto);
                 }
                 dr.Close();
-                return users;//retornar a lista
+                return users2;//retornar a lista
             }
             catch (Exception err)
             {
@@ -81,24 +81,24 @@ namespace projeto
             }
             return null;
         }
-     public void InsertUsuario(Usuario usuario)
+     public void InsertUsuario2(Usuario2 usuario2)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO Table_1 VALUES(@nome,@senha)";
+            sqlCommand.CommandText = @"INSERT INTO Table_2 VALUES(@cpf,@email)";
 
-            sqlCommand.Parameters.AddWithValue("@nome", usuario.Nome);
-            sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
+            sqlCommand.Parameters.AddWithValue("@cpf", usuario2.Cpf );
+            sqlCommand.Parameters.AddWithValue("@email", usuario2.Email);
             sqlCommand.ExecuteNonQuery();
         }
-        public void DeleteUsuario(int id)
+        public void DeleteUsuario2(int id)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"DELETE FROM Table_1 WHERE id = @id";
+            sqlCommand.CommandText = @"DELETE FROM Table_2 WHERE id = @id";
             sqlCommand.Parameters.AddWithValue("@id", id);
             try
             {
@@ -113,20 +113,20 @@ namespace projeto
                 connection.CloseConnection();
             }
         }
-        public void UpdateUsuario(Usuario usuario)
+        public void UpdateUsuario2(Usuario2 usuario2)
         {
             Connection connection = new Connection();
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"UPDATE table_1 SET
-            Nome = @nome,
-            Senha = @senha
+            sqlCommand.CommandText = @"UPDATE table_2 SET
+            Cpf = @cpf,
+            Email = @email
             WHERE id = @id";
 
-            sqlCommand.Parameters.AddWithValue("@nome", usuario.Nome);
-            sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
-            sqlCommand.Parameters.AddWithValue("@id", usuario.Id);
+            sqlCommand.Parameters.AddWithValue("@cpf", usuario2.Cpf);
+            sqlCommand.Parameters.AddWithValue("@email", usuario2.Email);
+            sqlCommand.Parameters.AddWithValue("@id", usuario2.Id);
             sqlCommand.ExecuteNonQuery();
 
         }

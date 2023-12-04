@@ -1,5 +1,8 @@
-﻿using CefSharp.DevTools.LayerTree;
+﻿using CefSharp.DevTools.Database;
+using CefSharp.DevTools.LayerTree;
 using InvestimentosMais;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -21,6 +25,7 @@ namespace projeto
     {
         private int id; 
         Thread abc;
+        private readonly string DataBase = "M.S";
         public Form1()
         {
             InitializeComponent();
@@ -81,30 +86,39 @@ namespace projeto
 
         private void novoForm()
         {
-            Application.Run(new Form2());
+            Application.Run(new FormLogin());
         }
 
         private void button2_Click_2(object sender, EventArgs e)
         {
             String name = textname.Text;
             String senha = txbEnrollment.Text;
-            if (name == "" && senha == "")
+            try
             {
-                this.Close();
-                abc = new Thread(novoForm);
-                abc.SetApartmentState(ApartmentState.STA);
-                abc.Start();
+                UsuarioDAO user = new UsuarioDAO();
+
+                string hashedSenha = Usuario.CriptografarSenha(senha);
+                if (user.Loginusuario(name, hashedSenha))
+                {
+                    this.Close();
+                    abc = new Thread(novoForm);
+                    abc.SetApartmentState(ApartmentState.STA);
+                    abc.Start();
+                }
+                else
+                {
+                    MessageBox.Show("Nome de usuário ou senha incorretos!",
+                        "Erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                        );
+
+                }
+            
             }
-            else
+            catch (Exception error)
             {
-
-                String message = "Nome: " + name +
-                                "\nSenha: " + senha;
-                MessageBox.Show(message, "",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-                    );
-
+                MessageBox.Show(error.Message);
             }
         }
 
@@ -232,6 +246,77 @@ namespace projeto
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form0 tela1 = new Form0();
+            tela1.ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // Cria uma instância do SaveFileDialog
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            // Define as propriedades do SaveFileDialog
+            saveFileDialog.Filter = "Arquivos PDF (*.pdf)|*.pdf|Todos os arquivos (*.*)|*.*";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+
+            // Exibe o diálogo e verifica se o usuário pressionou OK
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                /// Obtém o caminho escolhido pelo usuário
+                string filePath = saveFileDialog.FileName;
+
+                // Conexão com o banco de dados SQL Server
+                string stringConnection = @"Data Source="
+                + Environment.MachineName +
+                         @"\SQLEXPRESS;Initial Catalog=" +
+                         DataBase + ";Integrated Security=true";
+                SqlConnection connection = new SqlConnection(stringConnection);
+                connection.Open();
+
+                // Consulta SQL para recuperar as informações
+                string query = "SELECT nome, senha FROM Table_1";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Cria um novo documento PDF
+                Document document = new Document();
+
+                try
+                { // Cria um PdfWriter usando o caminho escolhido pelo usuário
+                    PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+
+                    // Abre o documento antes de adicionar elementos
+                    document.Open();
+
+                    // Cria uma nova tabela e adiciona as informações recuperadas
+                    PdfPTable table = new PdfPTable(2);
+                    table.AddCell("nome");
+                    table.AddCell("senha");
+
+                    while (reader.Read())
+                    {
+                        table.AddCell(reader["nome"].ToString());
+                        table.AddCell(reader["senha"].ToString());
+                    }
+
+                    // Adiciona a tabela ao documento
+                    document.Add(table);
+
+                    MessageBox.Show("Relatório gerado com sucesso", "Êxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                finally
+                {
+                    // Fecha o documento e a conexão com o banco de dados
+                    document.Close();
+                    connection.Close();
+                }
+            }
         }
     }
 }           
