@@ -78,10 +78,6 @@ namespace projeto
                 MessageBox.Show(err.Message);
             }
         }
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-           
-        }
 
         private void novoForm()
         {
@@ -219,7 +215,6 @@ namespace projeto
             index = listView2.FocusedItem.Index;
             id = int.Parse(listView2.Items[index].SubItems[0].Text);
             textname.Text = listView2.Items[index].SubItems[1].Text;
-            txbEnrollment.Text = listView2.Items[index].SubItems[2].Text;
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

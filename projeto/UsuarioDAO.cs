@@ -20,9 +20,6 @@ namespace projeto
             sqlCom.CommandText = "SELECT * FROM Table_1 WHERE" +
                 " Nome = @Nome AND Senha = @Senha";
             sqlCom.Parameters.AddWithValue("@Nome",usuario);
-            sqlCom.Parameters.AddWithValue("@Senha",senha);
-
-
             try
             {
                 SqlDataReader dr = sqlCom.ExecuteReader();
