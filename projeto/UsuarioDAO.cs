@@ -24,19 +24,12 @@ namespace projeto
             try
             {
                 SqlDataReader dr = sqlCom.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    dr.Read();
-                    string hashedSenha = (string)dr["Senha"];
-                    dr.Close();
 
                     // Verificar se a senha fornecida corresponde à senha armazenada no banco de dados
                     if (VerificarSenha(senha, hashedSenha))
                     {
                         return true;
                     }
-                    return true;
-                }
                 dr.Close();
                 return false;
             }
@@ -84,7 +77,6 @@ namespace projeto
             {
                 conn.CloseConnection();
             }
-            return null;
         }
      public void InsertUsuario(Usuario usuario)
         {
